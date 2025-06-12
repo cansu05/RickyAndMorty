@@ -43,12 +43,12 @@ const Filters = () => {
   const species = searchParams.get("species") || "";
 
   return (
-    <div className="flex lg:flex-row md:flex-row flex-col gap-5">
+    <div className="flex lg:flex-row md:flex-row flex-col gap-5 px-5">
       <Select
         value={status}
         onValueChange={(value) => handleFilterChange("status", value)}
       >
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="w-[180px] border border-gray-950 bg-emerald-200">
           <SelectValue placeholder="Status" />
         </SelectTrigger>
         <SelectContent>
@@ -64,7 +64,7 @@ const Filters = () => {
         value={gender}
         onValueChange={(value) => handleFilterChange("gender", value)}
       >
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="w-[180px] border border-gray-950 bg-violet-300">
           <SelectValue placeholder="Gender" />
         </SelectTrigger>
         <SelectContent>
@@ -80,7 +80,7 @@ const Filters = () => {
         value={species}
         onValueChange={(value) => handleFilterChange("species", value)}
       >
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="w-[180px] border border-gray-950 bg-pink-300">
           <SelectValue placeholder="Species" />
         </SelectTrigger>
         <SelectContent>
