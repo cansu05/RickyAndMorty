@@ -26,7 +26,7 @@ const CharacterContainer = () => {
   const { characters, error } = useAppSelector((state) => state.characters);
 
   return (
-    <div className="flex flex-col m-10 space-y-10">
+    <div className="flex flex-col m-10 space-y-10 w-full max-w-[1200px] mx-auto">
       <Filters />
       {error === "No characters found" ? (
         <p>No characters found with these filters.</p>
