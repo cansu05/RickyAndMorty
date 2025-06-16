@@ -1,12 +1,6 @@
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import CharacterContainer from "@/components/CharacterContainer";
 
-const CharacterContainer = dynamic(
-  () => import("@/components/CharacterContainer"),
-  {
-    ssr: false,
-  }
-);
+import { Suspense } from "react";
 
 export default function Page() {
   return (
