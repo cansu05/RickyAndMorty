@@ -38,7 +38,9 @@ const CharacterContainer = () => {
         <p>No characters found with these filters.</p>
       ) : (
         <div>
-          {" "}
+          <h1 className="text-xl font-bold tracking-widest text-center mb-5">
+            👾 Rick & Morty Catalog
+          </h1>
           <CharactersList characters={characters} />
         </div>
       )}
