@@ -11,7 +11,7 @@ import Pagination from "./Pagination";
 const CharacterContainer = () => {
   const dispatch = useAppDispatch();
   const searchParams = useSearchParams();
-  const page = searchParams.get("page") || "1";
+
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString());
 
