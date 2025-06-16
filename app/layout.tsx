@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { ReduxProvider } from "@/redux/provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const retroFont = Press_Start_2P({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,11 +18,7 @@ export default function RootLayout({
   return (
     <ReduxProvider>
       <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {children}
-        </body>
+        <body className={`${retroFont.className} antialiased`}>{children}</body>
       </html>
     </ReduxProvider>
   );

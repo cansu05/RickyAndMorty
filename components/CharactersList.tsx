@@ -13,15 +13,15 @@ const bgColors = [
 
 const CharactersList = ({ characters }: { characters: Character[] }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:px-5 md:px-5 place-items-center">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:px-5 md:px-5 place-items-center">
       {characters.map(({ id, name, image, status, gender }) => {
         const bg = bgColors[id % bgColors.length];
         return (
           <div
             key={id}
-            className={`w-full h-full border border-gray-950  max-w-[300px] min-h-[350px] flex flex-col justify-around items-center rounded gap-4 ${bg}`}
+            className={`w-full h-full border-[3px] border-gray-950  max-w-[300px] min-h-[350px] flex flex-col justify-around items-center gap-4 ${bg}`}
           >
-            <div className="relative w-full h-full border  border-b-gray-950">
+            <div className="relative w-full h-full border-[3px]  border-b-gray-950">
               <Image
                 alt={name}
                 src={image}
@@ -32,15 +32,15 @@ const CharactersList = ({ characters }: { characters: Character[] }) => {
               />
             </div>
             <div className="text-sm text-black w-full space-y-1 px-3 pb-3">
-              <p>
+              <p className="text-xs">
                 <span className="font-semibold capitalize">Name: </span>
                 {name}
               </p>
-              <p>
+              <p className="text-xs">
                 <span className="font-semibold capitalize">Status: </span>
                 {status}
               </p>
-              <p>
+              <p className="text-xs">
                 <span className="font-semibold capitalize">Gender: </span>
                 {gender}
               </p>

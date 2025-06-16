@@ -4,13 +4,14 @@ import { fetchCharacters } from "@/redux/characterSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-import CharactersList from "./CharactersList";
 import Filters from "./Filters";
+import CharactersList from "./CharactersList";
+import Pagination from "./Pagination";
 
 const CharacterContainer = () => {
   const dispatch = useAppDispatch();
   const searchParams = useSearchParams();
-
+  const page = searchParams.get("page") || "1";
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString());
 
@@ -23,15 +24,25 @@ const CharacterContainer = () => {
     dispatch(fetchCharacters(params.toString()));
   }, [searchParams, dispatch]);
 
-  const { characters, error } = useAppSelector((state) => state.characters);
+  const { characters, info, error } = useAppSelector(
+    (state) => state.characters
+  );
 
   return (
     <div className="flex flex-col m-10 space-y-10 w-full max-w-[1200px] mx-auto">
-      <Filters />
+      <div className="flex lg:flex-row flex-col justify-between">
+        <Filters />
+        <Pagination totalPages={info.pages} />
+      </div>
       {error === "No characters found" ? (
         <p>No characters found with these filters.</p>
       ) : (
-        <CharactersList characters={characters} />
+        <div>
+          <h1 className="text-xl font-bold tracking-widest text-center mb-5">
+            👾 Rick & Morty Catalog
+          </h1>
+          <CharactersList characters={characters} />
+        </div>
       )}
     </div>
   );
