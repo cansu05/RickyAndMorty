@@ -12,7 +12,7 @@ Bu proje, Rick and Morty dizisindeki karakterleri listeleyen, filtreleyen ve det
 🛠️ **Redux Toolkit** ile global state yönetimi  
 ⚡ **TypeScript** desteği  
 
- Vercel: https://lnkd.in/d-pXb-V2
+ Vercel: [https://lnkd.in/d-pXb-V2](https://ricky-and-morty-omega-seven.vercel.app/character)
 
 ## 🛠️ Kurulum ve Çalıştırma
 
